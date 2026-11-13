@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombia - Departamentos y Municipios</title>
+</head>
+<body>
+    <!-- Contenedor del mapa: OpenLayers dibuja aquí -->
+    <div id="map"></div>
+
+    <!-- Panel informativo (arriba a la izquierda) -->
+    <div class="panel info">
+        <h4>Colombia - Servicios geográficos</h4>
+        <p>Visualización de departamentos y municipios</p>
+        <p><small>Datos: DANE (MGN 2024) | Base: OpenStreetMap / Esri</small></p>
+    </div>
+
+    <!-- Paneles de la derecha: buscador y control de capas -->
+    <div class="lateral">
+        <div class="panel buscador">
+            <input type="search" id="buscar-texto" placeholder="Buscar departamento...">
+            <button id="buscar-boton">Buscar</button>
+            <div id="buscar-mensaje"></div>
+        </div>
+
+        <div class="panel capas">
+            <h4>Mapa base</h4>
+            <div id="capas-base"></div>
+            <h4>Capas</h4>
+            <div id="capas-superpuestas"></div>
+        </div>
+    </div>
+
+    <!-- Plantilla del popup: OpenLayers la mueve dentro del mapa como un Overlay -->
+    <div id="popup" class="popup">
+        <a href="#" id="popup-cerrar" class="popup-cerrar" title="Cerrar">&times;</a>
+        <div id="popup-contenido"></div>
+    </div>
+
+    <!-- Nuestra aplicación (módulo ES; Vite resuelve los imports de 'ol') -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+/* ---- Paneles flotantes ---- */
+.panel {
+    padding: 10px;
+    font: 14px/18px Arial, sans-serif;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.panel h4 {
+    margin: 0 0 5px;
+    color: #333;
+}
+
+/* Desplazado a la derecha para no tapar los botones de zoom de OpenLayers */
+.info {
+    position: absolute;
+    top: 8px;
+    left: 48px;
+    max-width: 260px;
+}
+
+.lateral {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 220px;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+#buscar-mensaje {
+    color: #b00;
+    font-size: 12px;
+}
+
+.capas label {
+    display: block;
+    cursor: pointer;
+}
+
+.capas h4 + div {
+    margin-bottom: 8px;
+}
+
+/* ---- Popup (Overlay de OpenLayers) ---- */
+.popup {
+    position: absolute;
+    background: white;
+    padding: 10px 24px 10px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transform: translate(-50%, calc(-100% - 12px));
+}
+
+/* Flecha inferior */
+.popup::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+    border: 10px solid transparent;
+    border-bottom: 0;
+    border-top-color: white;
+}
+
+.popup-cerrar {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+}
+
+/* La escala se mueve un poco para que no choque con la atribución */
+.ol-scale-line {
+    left: 8px;
+    bottom: 8px;
+}
